@@ -10,6 +10,10 @@ docker run --name docker-jlink -d -p 9000:9000 -p 9010:9010 --memory 400MB --mem
 ```
 jlink --module-path $LOCAL_PATH/java/jdk/jmods --compress=2 --add-modules jdk.jfr,jdk.management.agent,java.base,java.logging,java.xml,jdk.unsupported,java.sql,java.naming,java.desktop,java.management,java.security.jgss,java.instrument --no-header-files --no-man-pages --strip-debug --output $LOCAL_PATH/java/jdk-11-custom-modules
 ```
+# Build project and Docker Container
+```
+    mvn clean install docker:build
+```
 
 # Misc
 Use VisualVM to analyse JVM parameters (https://visualvm.github.io/download.html)
