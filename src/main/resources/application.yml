@@ -1,0 +1,14 @@
+---
+server:
+  port: 9000
+
+management:
+  port: 8085
+  add-application-context-header: true
+  endpoints:
+    web:
+      base-path: /management
+      exposure:
+        include: info,health
+
+spring.application.name: DockerJLink
